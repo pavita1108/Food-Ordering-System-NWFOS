@@ -4,13 +4,13 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog , QApplication, QWidget, QStackedWidget
 from PyQt5.QtCore import Qt
 import sqlite3
-import cart as cart
+import cart 
+import random_id
 
 class Main (QDialog):
     def __init__(self):
         super(Main, self).__init__()
         loadUi("./src/main.ui", self)
-        # self.loadData()
         db = sqlite3.connect("data.sqlite")
         cursor = db.cursor()
         sqlquery = "SELECT * FROM menu"
@@ -22,6 +22,7 @@ class Main (QDialog):
             for column in range(3):
                 item = QtWidgets.QTableWidgetItem(str(result[row][column+1]))
                 self.tableWidget.setItem(row, column, item)
+
         self.searchText.textChanged.connect(self.filtermenu)
         self.allMenuButton.clicked.connect(self.searchText.clear)
         self.tableWidget.clicked.connect(self.getMenu)
@@ -38,19 +39,6 @@ class Main (QDialog):
         self.umw.show()
         self.close()
 
-
-    # def loadData(self):
-    #     db = sqlite3.connect("data.sqlite")
-    #     cursor = db.cursor()
-    #     sqlquery = "SELECT * FROM menu"
-    #     result = cursor.execute(sqlquery).fetchall()
-    #     row = 0
-    #     self.tableWidget.setRowCount(len(result))
-    #     for menu in result:
-    #         self.tableWidget.setItem(row, 0, QtWidgets.QTableWidgetItem(menu[1]))
-    #         self.tableWidget.setItem(row, 1, QtWidgets.QTableWidgetItem(str(menu[2])))
-    #         self.tableWidget.setItem(row, 2, QtWidgets.QTableWidgetItem(menu[3]))
-    #         row += 1
     
     def filtermenu (self, filter_text):
         for i in range(self.tableWidget.rowCount()):
@@ -79,15 +67,16 @@ class Main (QDialog):
 
         db = sqlite3.connect("data.sqlite")
         cursor = db.cursor()
-        sqlquery = "SELECT * FROM keranjang WHERE nama = '"+nama+"'"
+        sqlquery = "SELECT * FROM keranjang WHERE nama = '"+nama+"' AND id_keranjang = " +str(random_id.id_keranjang)
         result = cursor.execute(sqlquery).fetchall()
         if (len(result) == 0):
-            sqlquery = "INSERT INTO keranjang (nama, kuantitas, harga_per_item, total) VALUES ('" + nama + "',"+str(jumlah)+","+str(harga)+","+str(total)+")"
+            sqlquery = "INSERT INTO keranjang (id_keranjang, nama, kuantitas, harga_per_item, total) VALUES ( "+str(random_id.id_keranjang)+",'" + nama + "',"+str(jumlah)+","+str(harga)+","+str(total)+")"
         else :
-            sqlquery = "UPDATE keranjang SET kuantitas = " + str(jumlah) + ", total = " + str(total)+" WHERE nama = '" + nama+"'"
+            sqlquery = "UPDATE keranjang SET kuantitas = " + str(jumlah) + ", total = " + str(total)+" WHERE nama = '"+nama+"' AND id_keranjang = " +str(random_id.id_keranjang)
         cursor.execute(sqlquery)
         db.commit()
 
+random_id.idGenerator()
 app = QApplication(sys.argv)
 window  = Main()
 window.show()

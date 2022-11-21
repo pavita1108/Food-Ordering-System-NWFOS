@@ -3,6 +3,8 @@ from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog , QApplication, QWidget, QStackedWidget
 import sqlite3
+import resi
+import random_id
 
 class Cart (QWidget):
     def __init__(self):
@@ -12,20 +14,26 @@ class Cart (QWidget):
         self.tableWidget.clicked.connect(self.getMenu)
         self.plusButton.clicked.connect(self.plusItem)
         self.minButton.clicked.connect(self.minItem)
+        self.resiButton.clicked.connect(self.gtResi)
         pass
-    
+        
+    def gtResi(self):
+        self.umw = resi.Resi()
+        self.umw.show()
+        self.close()    
+
     def loadData(self):
         db = sqlite3.connect("data.sqlite")
         cursor = db.cursor()
-        sqlquery = "SELECT * FROM keranjang"
+        sqlquery = "SELECT * FROM keranjang WHERE id_keranjang = "+str(random_id.id_keranjang)
         result = cursor.execute(sqlquery).fetchall()
         row = 0
         self.tableWidget.setRowCount(len(result))
         for menu in result:
-            self.tableWidget.setItem(row, 0, QtWidgets.QTableWidgetItem(menu[0]))
-            self.tableWidget.setItem(row, 1, QtWidgets.QTableWidgetItem(str(menu[1])))
-            self.tableWidget.setItem(row, 2, QtWidgets.QTableWidgetItem(str(menu[2])))
-            self.tableWidget.setItem(row, 3, QtWidgets.QTableWidgetItem(str(menu[3])))
+            self.tableWidget.setItem(row, 0, QtWidgets.QTableWidgetItem(menu[1]))
+            self.tableWidget.setItem(row, 1, QtWidgets.QTableWidgetItem(str(menu[2])))
+            self.tableWidget.setItem(row, 2, QtWidgets.QTableWidgetItem(str(menu[3])))
+            self.tableWidget.setItem(row, 3, QtWidgets.QTableWidgetItem(str(menu[4])))
             row += 1
         
     def getMenu(self):
@@ -50,7 +58,7 @@ class Cart (QWidget):
 
         db = sqlite3.connect("data.sqlite")
         cursor = db.cursor()
-        sqlquery = "UPDATE keranjang SET kuantitas = " + str(kuantitas) + ", total = " + str(total)+" WHERE nama = '" + nama+"'"
+        sqlquery = "UPDATE keranjang SET kuantitas = " + str(kuantitas) + ", total = " + str(total)+" WHERE nama = '"+nama+"' AND id_keranjang = " +str(random_id.id_keranjang)
         cursor.execute(sqlquery)
         db.commit()
 
@@ -67,12 +75,15 @@ class Cart (QWidget):
 
         db = sqlite3.connect("data.sqlite")
         cursor = db.cursor()
-        sqlquery = "UPDATE keranjang SET kuantitas = " + str(kuantitas) + ", total = " + str(total)+" WHERE nama = '" + nama+"'"
+        sqlquery = "UPDATE keranjang SET kuantitas = " + str(kuantitas) + ", total = " + str(total)+" WHERE nama = '"+nama+"' AND id_keranjang = " +str(random_id.id_keranjang)
         cursor.execute(sqlquery)
         db.commit()
 
         self.loadData()
         self.getMenu()
+
+
+    
 
 
         

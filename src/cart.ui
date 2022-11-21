@@ -57,6 +57,9 @@
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -78,6 +81,9 @@
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -98,6 +104,9 @@
     <font>
      <pointsize>10</pointsize>
     </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
    </property>
    <property name="text">
     <string/>
@@ -158,6 +167,19 @@
    </property>
    <property name="text">
     <string>+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="resiButton">
+   <property name="geometry">
+    <rect>
+     <x>1100</x>
+     <y>640</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cetak Resi</string>
    </property>
   </widget>
  </widget>
