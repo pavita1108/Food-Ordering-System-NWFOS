@@ -6,40 +6,114 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
+    <width>1279</width>
     <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>120</y>
+     <y>190</y>
      <width>1231</width>
-     <height>501</height>
+     <height>431</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTableQidget #tableWidget{
+	border-style : solid;
+	border : 0px;
+	padding : 10px;
+}</string>
+   </property>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>250</number>
+   </attribute>
+   <attribute name="horizontalHeaderHighlightSections">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>50</number>
+   </attribute>
+   <attribute name="verticalHeaderHighlightSections">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
    <column>
     <property name="text">
      <string>Nama</string>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
    </column>
    <column>
     <property name="text">
      <string>Quantity</string>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
    </column>
    <column>
     <property name="text">
      <string>Price</string>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
    </column>
    <column>
     <property name="text">
      <string>Total</string>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
    </column>
   </widget>
@@ -47,15 +121,27 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>30</y>
+     <y>110</y>
      <width>181</width>
      <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#labelHarga{
+	border-radius : 10px;
+	border : 1px;
+	border-style : solid;
+	font : 20px;
+	padding : 6px;
+}</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Box</enum>
@@ -71,15 +157,27 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>30</y>
+     <y>110</y>
      <width>291</width>
      <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#labelNama{
+	border-radius : 10px;
+	border : 1px;
+	border-style : solid;
+	font : 20px;
+	padding : 6px;
+}</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Box</enum>
@@ -95,15 +193,27 @@
    <property name="geometry">
     <rect>
      <x>530</x>
-     <y>30</y>
+     <y>110</y>
      <width>181</width>
      <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#labelTotal{
+	border-radius : 10px;
+	border : 1px;
+	border-style : solid;
+	font : 20px;
+	padding : 6px;
+}</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Box</enum>
@@ -119,33 +229,69 @@
    <property name="geometry">
     <rect>
      <x>900</x>
-     <y>40</y>
+     <y>120</y>
      <width>71</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit#kuantitasText{
+	border-radius: 10px;
+	border:1px;
+	border-style:solid;
+	font:14px;
+	padding:6px;
+}</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="minButton">
    <property name="geometry">
     <rect>
      <x>850</x>
-     <y>40</y>
+     <y>120</y>
      <width>31</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>15</pointsize>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#minButton {
+    background-color: #56BB86;
+    border-radius: 10px;
+    font:30px;
+	color:#000;
+    padding: 6px;
+}
+QPushButton#minButton:hover {
+    background-color:rgb(46, 209, 119);
+	border-style: inset;
+}
+
+QPushButton#minButton:pressed {
+    background-color:rgb(58, 127, 90);
+	border-style: inset;
+}</string>
    </property>
    <property name="text">
     <string>-</string>
@@ -155,15 +301,36 @@
    <property name="geometry">
     <rect>
      <x>990</x>
-     <y>40</y>
+     <y>120</y>
      <width>31</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>15</pointsize>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#plusButton {
+    background-color: #56BB86;
+    border-radius: 10px;
+    font:28px;
+	color:#000;
+    padding: 6px;
+}
+QPushButton#plusButton:hover {
+    background-color:rgb(46, 209, 119);
+	border-style: inset;
+}
+
+QPushButton#plusButton:pressed {
+    background-color:rgb(58, 127, 90);
+	border-style: inset;
+}</string>
    </property>
    <property name="text">
     <string>+</string>
@@ -178,10 +345,182 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#resiButton {
+    background-color: rgb(225, 225, 225);
+    border-radius: 10px;
+	border:1px;
+	border-style:solid;
+    font:16px;
+	color:#000;
+    padding: 6px;
+}
+QPushButton#resiButton:hover {
+    background-color:rgb(213, 231, 231);
+	border-style: inset;
+}
+
+QPushButton#resiButton:pressed {
+    background-color:rgb(190, 190, 190);
+	border-style: inset;
+}</string>
+   </property>
    <property name="text">
     <string>Cetak Resi</string>
    </property>
   </widget>
+  <widget class="QFrame" name="cartHeader">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1281</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame#cartHeader{
+	background-color : rgb(86, 187, 134)
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="cartLabel">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>10</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#cartLabel{
+    font:32px;
+	font-weight: bold;
+	color:#fff;
+}</string>
+    </property>
+    <property name="text">
+     <string>Keranjang</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#back_2 {
+    background-color: rgb(86, 187, 134);
+    border-radius: 10px;
+    font:28px;
+	font-weight: bold;
+	color:#fff;
+    padding: 6px;
+}
+
+
+QPushButton#back_2:pressed {
+	color:#ddd;
+    border-style: inset;
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt; Back</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Nama Makanan</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>90</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Harga (Rp)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>90</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Total (Rp)</string>
+   </property>
+  </widget>
+  <zorder>cartHeader</zorder>
+  <zorder>tableWidget</zorder>
+  <zorder>labelHarga</zorder>
+  <zorder>labelNama</zorder>
+  <zorder>labelTotal</zorder>
+  <zorder>kuantitasText</zorder>
+  <zorder>minButton</zorder>
+  <zorder>plusButton</zorder>
+  <zorder>resiButton</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_2</zorder>
  </widget>
  <resources/>
  <connections/>
