@@ -174,7 +174,7 @@
    <property name="styleSheet">
     <string notr="true">QLineEdit#jumlahText{
 	border-radius: 10px;
-	background-color: rgb(225, 225, 225);
+	background-color: rgb(240, 240, 240);
 }
 
 QLineEdit#jumlahText::focus{
