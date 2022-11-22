@@ -78,6 +78,8 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        # item = self.tableWidget.horizontalHeaderItem(0)
+        # item.setText(_translate("Dialog", "Gambar"))
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("Dialog", "Nama"))
         item = self.tableWidget.horizontalHeaderItem(1)
