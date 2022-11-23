@@ -70,7 +70,6 @@
    <property name="font">
     <font>
      <pointsize>10</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -196,43 +195,6 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QPushButton" name="back">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>131</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-      <weight>75</weight>
-      <italic>false</italic>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton#back {
-    background-color: rgb(86, 187, 134);
-    border-radius: 10px;
-    font:28px;
-	font-weight: bold;
-	color:#fff;
-    padding: 6px;
-}
-
-
-QPushButton#back:pressed {
-	color:#ddd;
-    border-style: inset;
-}</string>
-    </property>
-    <property name="text">
-     <string>&lt; Back</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="resi">
     <property name="geometry">
      <rect>
