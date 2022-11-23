@@ -5,7 +5,6 @@ from PyQt5.QtWidgets import QDialog , QApplication, QWidget, QStackedWidget
 import sqlite3
 import resi
 import random_id
-import main
 
 class Cart (QWidget):
     def __init__(self):
@@ -23,9 +22,6 @@ class Cart (QWidget):
         self.umw = resi.Resi()
         self.umw.show()
         self.close() 
-    def gtMain (self) :
-        loadUi("./src/main.ui", self)
-
 
     def loadData(self):
         db = sqlite3.connect("data.sqlite")
