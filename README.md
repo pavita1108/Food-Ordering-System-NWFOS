@@ -13,6 +13,9 @@ Daftar Isi
   - [Pemesanan](#pemesanan)
   - [Check Out](#check-out)
 - [Daftar Tabel Basis Data](#daftar-tabel-basis-data)
+    - [Menu](#menu-1)
+    - [Keranjang](#keranjang)
+    - [Resi](#resi)
 - [Kelompok 8](#kelompok-8)
 
 <br>
@@ -78,10 +81,32 @@ Screenshot :
 <br>
 
 # Daftar Tabel Basis Data
-1. menu
-2. keranjang
-3. resi
+### Menu
+| Column / Attribute | Data Type |
+| ------------------ | --------- |
+| Gambar             | BLOB      |
+| nama               | VARCHAR   |
+| harga              | INTEGER   |
+| deskripsi          | VARCHAR   |
+<br>
 
+### Keranjang
+| Column / Attribute | Data Type |
+| ------------------ | --------- |
+| id_keranjang       | INTEGER   |
+| nama               | VARCHAR   |
+| kuantitas          | INTEGER   |
+| harga_per_item     | INTEGER   |
+| total              | INTEGER   |
+<br>
+
+### Resi
+| Column / Attribute | Data Type |
+| ------------------ | --------- |
+| id_keranjang       | INTEGER   |
+| total              | INTEGER   |
+
+<br>
 <br>
 
 # Kelompok 8
