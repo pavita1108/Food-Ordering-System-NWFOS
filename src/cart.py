@@ -14,10 +14,6 @@ class Cart (QWidget):
         self.minButton.clicked.connect(self.minItem)
         self.resiButton.clicked.connect(self.printResi)
         self.back_2.clicked.connect(self.gtMenu)
-
-        pass
-        
-    def gtResi(self):
         pass
 
     def printResi(self):
@@ -29,7 +25,11 @@ class Cart (QWidget):
             msg.setWindowTitle("KERANJANG KOSONG")
             msg.exec_()
         else:
-            self.gtResi
+            self.gtResi()
+        
+    def gtResi(self):
+        pass
+
 
     def gtMenu(self):
         pass 
@@ -72,12 +72,12 @@ class Cart (QWidget):
             self.kuantitasText.setText(rowKuantitas)
     
     def plusItem (self):
-        if self.tableWidget.rowCount()<=0:
+        if self.labelNama.text() == "" :
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Critical)
-            msg.setText("Anda Tidak Bisa Melakukan Pengurangan")
-            msg.setInformativeText('Keranjang anda sudah kosong.')
-            msg.setWindowTitle("Anda Tidak Bisa Melakukan Pengurangan")
+            msg.setText("Anda Tidak Bisa Melakukan Penambahan")
+            msg.setInformativeText('Pilih menu untuk menambahkan jumlah item')
+            msg.setWindowTitle("Anda Tidak Bisa Melakukan Penambahan")
             msg.exec_()
         else:
             row = self.tableWidget.currentRow()
@@ -97,11 +97,11 @@ class Cart (QWidget):
             self.getMenu()
 
     def minItem (self):
-        if self.tableWidget.rowCount()<=0:
+        if self.labelNama.text() == "":
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Critical)
             msg.setText("Anda Tidak Bisa Melakukan Pengurangan")
-            msg.setInformativeText('Keranjang anda sudah kosong.')
+            msg.setInformativeText('Pilih menu untuk mengurangi jumlah item')
             msg.setWindowTitle("Anda Tidak Bisa Melakukan Pengurangan")
             msg.exec_()
         else:

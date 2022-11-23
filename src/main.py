@@ -7,8 +7,6 @@ import random_id
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication
 
-
-
 random_id.idGenerator()
 app = QApplication(sys.argv)
 
