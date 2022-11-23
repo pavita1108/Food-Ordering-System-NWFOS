@@ -41,9 +41,8 @@ Pengguna bernavigasi ke halaman chekout, membaca pesanan, kemudian melakukan che
 
 ## Daftar Tabel Basis Data
 1. menu
-2. isi_keranjang
-3. keranjang
-4. resi
+2. keranjang
+3. resi
 
 ## Kelompok 8
 | NIM      | Nama                               |
