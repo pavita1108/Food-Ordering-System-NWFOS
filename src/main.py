@@ -1,5 +1,4 @@
 import sys
-import os
 from menu import Menu
 from cart import Cart
 from resi import Resi
@@ -34,6 +33,7 @@ screen.setCurrentWidget(menuscreen)
 screen.setFixedHeight(720)
 screen.setFixedWidth(1280)
 screen.show()
+screen.setWindowTitle("NWFOS")
 
 try :
     sys.exit(app.exec_())

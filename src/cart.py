@@ -25,7 +25,17 @@ class Cart (QWidget):
             msg.setWindowTitle("KERANJANG KOSONG")
             msg.exec_()
         else:
-            self.gtResi()
+            dlg = QMessageBox()
+            dlg.setWindowTitle("Check Out?")
+            dlg.setText("Checkout dan tampilkan resi")
+            dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+            dlg.setIcon(QMessageBox.Question)
+            button = dlg.exec()
+
+            if button == QMessageBox.Yes:
+                self.gtResi()
+
+            
         
     def gtResi(self):
         pass
@@ -82,19 +92,29 @@ class Cart (QWidget):
         else:
             row = self.tableWidget.currentRow()
             nama = self.tableWidget.item(row,0).text()
-            kuantitas = int(self.kuantitasText.text()) +1
-            harga =int(self.tableWidget.item(row,2).text())
-            total = harga*kuantitas
-            self.kuantitasText.setText(str(kuantitas))
+            if int(self.kuantitasText.text())>=0:
+                kuantitas = int(self.kuantitasText.text()) +1
+                harga =int(self.tableWidget.item(row,2).text())
+                total = harga*kuantitas
+                self.kuantitasText.setText(str(kuantitas))
 
-            db = sqlite3.connect("data.sqlite")
-            cursor = db.cursor()
-            sqlquery = "UPDATE keranjang SET kuantitas = " + str(kuantitas) + ", total = " + str(total)+" WHERE nama = '"+nama+"' AND id_keranjang = " +str(random_id.id_keranjang)
-            cursor.execute(sqlquery)
-            db.commit()
+                db = sqlite3.connect("data.sqlite")
+                cursor = db.cursor()
+                sqlquery = "UPDATE keranjang SET kuantitas = " + str(kuantitas) + ", total = " + str(total)+" WHERE nama = '"+nama+"' AND id_keranjang = " +str(random_id.id_keranjang)
+                cursor.execute(sqlquery)
+                db.commit()
 
-            self.loadData()
-            self.getMenu()
+                self.loadData()
+                self.getMenu()
+            else:
+                db = sqlite3.connect("data.sqlite")
+                cursor = db.cursor()
+                sqlquery = "DELETE FROM keranjang WHERE nama = '"+nama+"' AND id_keranjang = " +str(random_id.id_keranjang)
+                cursor.execute(sqlquery)
+                db.commit()
+
+                self.loadData()
+                self.getMenu()
 
     def minItem (self):
         if self.labelNama.text() == "":
